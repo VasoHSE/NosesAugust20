@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using NosesService.Data;
-
+using System.IO;
 namespace NosesService
 {
     public class Repository
@@ -16,14 +16,38 @@ namespace NosesService
         }
         public void Seed()
         {
-            var kek = new Random();
-            _context.Users.Add(new User(
-            {
-                create_date = DateTime.Now.AddDays(-kek.Next(1,100)),
-                
-                
-            }))
+            
+            _context.SaveChanges();
         }
+        public void SeedUsers()
+        {
+            var kek = new Random();
+            var names = File.ReadAllLines("names.txt");
+            for (int i = 0; i < names.Length; i++)
+            {
+                var a = names[i];
 
+                _context.Users.Add(new User
+                {
+                    create_date = DateTime.Now.AddDays(-kek.Next(1, 100)),
+                    last_active = DateTime.Now.AddDays(kek.Next(1, 13)),
+                    email = string.Format(a + i + "@gmail.com"),
+                    isDoctor = kek.Next(0, 2) == 1,
+                    facebook = string.Format("fb.com/" + a + i),
+                    instagram = string.Format("@insta" + a + i),
+                    name = a,
+                    password = string.Format("pw" + a + i),
+                    patronimic = string.Format(a + i + "evna"),
+                    phone = string.Format("7916" + kek.Next(1111111, 9999999)),
+                    rating = kek.Next(123, 1234),
+                    surname = kek.Next(0, 2) == 1 ? string.Format(a + i + "yan") : string.Format(a + i + "son"),
+                    twitter = string.Format(a + i + "twitt"),
+                    vk = string.Format(a + i + "vk"),
+                    website = string.Format("http://" + a + i),
+                    youtube = string.Format("youtube@" + a)
+                });
+            }
+            _context.SaveChanges();
+        }
     }
 }
