@@ -71,7 +71,6 @@
           <Property Name="password" Type="nvarchar" MaxLength="50" />
           <Property Name="phone" Type="nvarchar" MaxLength="50" />
           <Property Name="create_date" Type="datetime" Nullable="false" />
-          <Property Name="organisation_id" Type="int" />
           <Property Name="last_active" Type="datetime" Nullable="false" />
           <Property Name="website" Type="nvarchar" MaxLength="50" />
           <Property Name="instagram" Type="nvarchar" MaxLength="50" />
@@ -338,7 +337,6 @@ warning 6002: The table/view 'NosesDbSecond.sys.database_firewall_rules' does no
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="organisation_id" Type="Int32" />
           <Property Name="last_active" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="instagram" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -596,7 +594,6 @@ warning 6002: The table/view 'NosesDbSecond.sys.database_firewall_rules' does no
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="create_date" ColumnName="create_date" />
-                <ScalarProperty Name="organisation_id" ColumnName="organisation_id" />
                 <ScalarProperty Name="last_active" ColumnName="last_active" />
                 <ScalarProperty Name="website" ColumnName="website" />
                 <ScalarProperty Name="instagram" ColumnName="instagram" />

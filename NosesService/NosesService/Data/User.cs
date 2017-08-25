@@ -34,7 +34,6 @@ namespace NosesService.Data
         public string password { get; set; }
         public string phone { get; set; }
         public System.DateTime create_date { get; set; }
-        public Nullable<int> organisation_id { get; set; }
         public System.DateTime last_active { get; set; }
         public string website { get; set; }
         public string instagram { get; set; }

@@ -108,6 +108,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\NosesDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NosesDb.edmx</DependentUpon>
+      <LastGenOutput>NosesDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\NosesDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NosesDb.edmx</DependentUpon>
+      <LastGenOutput>NosesDb.cs</LastGenOutput>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -129,16 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApiServiceNoses.svc" />
-    <Content Include="Data\NosesDb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NosesDb.edmx</DependentUpon>
-      <LastGenOutput>NosesDb.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Data\NosesDb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NosesDb.edmx</DependentUpon>
-      <LastGenOutput>NosesDb.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -181,14 +181,14 @@
     <Compile Include="Data\Organisation_User.cs">
       <DependentUpon>NosesDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository.cs" />
     <Compile Include="Data\User.cs">
       <DependentUpon>NosesDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\UserSession.cs">
       <DependentUpon>NosesDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

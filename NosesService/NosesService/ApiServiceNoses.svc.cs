@@ -25,15 +25,10 @@ namespace NosesService
         {
             //var woc = WebOperationContext.Current.IncomingRequest;
             //var authheader = woc.Headers["Authorization"];
-            try
-            {
+            
                 new Repository().Seed();
                 return "susses";
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
+            
         }
         // Add more operations here and mark them with [OperationContract]
     }
